@@ -1,6 +1,7 @@
 // lib/firebase.ts
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB9tQ-GLn5Hax4Y7ZchXWpaO5pLI1Pjy5k",
@@ -16,3 +17,12 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // eksportér databasen for bruk i MapView
 export const db = getFirestore(app);
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// ...
+
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+
