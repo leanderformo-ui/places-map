@@ -25,7 +25,7 @@ type Place = {
 
 function ClickHandler(props: { onAdd: (lat: number, lng: number) => void }) {
   useMapEvents({
-    click(e) {
+        click(e: any) {
       props.onAdd(e.latlng.lat, e.latlng.lng);
     },
   });
