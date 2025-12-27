@@ -12,17 +12,8 @@ const firebaseConfig = {
   appId: "1:241365647484:web:24302e741cef87f562c9f9",
 };
 
-// sørger for at Firebase kun initialiseres én gang (Next.js krever dette)
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-
-// eksportér databasen for bruk i MapView
-export const db = getFirestore(app);
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-// ...
-
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-
